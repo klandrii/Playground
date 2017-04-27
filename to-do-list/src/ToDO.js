@@ -10,6 +10,7 @@ var TodoList = React.createClass({
   },
   addItem: function (e) {
     var itemArray = this.state.items;
+    if (this._inputElement.value != ""){
     itemArray.push(
       {
         text: this._inputElement.value,
@@ -22,12 +23,16 @@ var TodoList = React.createClass({
     });
     this._inputElement.value="";
     e.preventDefault();
+    }else{
+      e.preventDefault();
+      return;
+    }
   },
   render: function () {
     return (
       <div className="todoListMain">
-                <div className ="header" >
-                <form onSubmit = {this.addItem}>
+                <div  className ="header" >
+                <form  onSubmit = {this.addItem}>
                     <input ref={(a) => this._inputElement = a}
                       placeholder = "enter task"></input>
                     <button type="submit"> add</button>

@@ -1,13 +1,13 @@
 body {
-    margin: auto; 
-    padding: 50 px;
+    margin: auto;
+    padding: 60 px;
     background-color: #ccff66;
     font-family: Arial;
 }
 
 .todoListMain .header input {
     margin: auto; 
-    padding: 12px;
+    padding: 16px;
     font-size: 16px;
     border: 2px solid #FFF;
 }
