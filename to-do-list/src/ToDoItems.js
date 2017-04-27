@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import './style.css';
 
 var TodoItems = React.createClass({
     render: function() {
@@ -10,7 +11,7 @@ var TodoItems = React.createClass({
         var listItems = todoEntries.map(createTasks);
         return (
             <ul className="theList">
-                {listItems}
+                    {listItems}
             </ul>
         );
     }

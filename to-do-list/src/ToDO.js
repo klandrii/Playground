@@ -8,11 +8,11 @@ var TodoList = React.createClass({
       items: []
     };
   },
-  addItem: function (e){
-    var itemArray = this.state.item;
+  addItem: function (e) {
+    var itemArray = this.state.items;
     itemArray.push(
       {
-        text: this.inputElement.value,
+        text: this._inputElement.value,
         key: Date.now()
       }
     );
@@ -20,17 +20,17 @@ var TodoList = React.createClass({
     this.setState({
       items: itemArray
     });
-    this.inputElement.value="";
+    this._inputElement.value="";
     e.preventDefault();
   },
-  render: function (){
+  render: function () {
     return (
       <div className="todoListMain">
                 <div className ="header" >
                 <form onSubmit = {this.addItem}>
-                    <input ref={(a) => this.inputElement = a}
+                    <input ref={(a) => this._inputElement = a}
                       placeholder = "enter task"></input>
-                    <button type= "submit"> add</button>
+                    <button type="submit"> add</button>
                 </form>
                 </div>
                 <ToDoItems entries={this.state.items} />
@@ -47,7 +47,7 @@ var TodoList = React.createClass({
 //     var itemArray = this.state.items;
 //     itemArray.push(
 //       {
-//         text:this.inputElement.value,
+//         text:this._inputElement.value,
 //         key: Date.now()
 //       }
 //     );
@@ -55,7 +55,7 @@ var TodoList = React.createClass({
 //     this.setState({
 //       items: itemArray
 //     });
-//     this.inputElement.value = null;
+//     this._inputElement.value = null;
 //     e.preventDefault();
 //   };
     // render () {
@@ -63,7 +63,7 @@ var TodoList = React.createClass({
     //         <div className="todoListMain">
     //             <div className ="header" >
     //             <form onSubmit = {this.addItem}>
-    //                 <input ref={(a) => this.inputElement = a}
+    //                 <input ref={(a) => this._inputElement = a}
     //                   placeholder = "enter task"></input>
     //                 <button type= "submit"> add</button>
     //             </form>
